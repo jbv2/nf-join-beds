@@ -1,0 +1,8 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
+%.sorted.bed:Q: %.bed
+	echo "Sorting BED files $prereq"
+	cat $prereq \
+	| sort -k1,1 -k2,2n $prereq > $target

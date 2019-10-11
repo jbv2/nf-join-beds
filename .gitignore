@@ -1,0 +1,22 @@
+# ignorando logs de nextflow
+.nextflow.log*
+
+# ignorando los resultados de las pruebas locales de los módulos
+mkmodules/mk-*/test/results/
+test/results
+
+#archivos temporales
+*.tmp
+
+# ignorando swaps
+*.swp
+
+#ignorando workkdir
+work
+
+#ignorando archivos basura nexflow
+.nextflow*
+.nextflow/history
+
+
+test/reference

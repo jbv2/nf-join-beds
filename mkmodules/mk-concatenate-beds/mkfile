@@ -1,0 +1,7 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
+%/tagged.sorted.concatenated.bed:Q: %/
+	echo "[DEBUG] Concatenando los archivos BEDs que radican en $prereq ; y que son $(ls $prereq)"
+	bedops -u $prereq*.bed > $target
